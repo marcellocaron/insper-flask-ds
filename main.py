@@ -21,6 +21,11 @@ def core():
 def add(a, b):
     return str(float(a) + float(b))
 
+
+@app.route('/delta/<a>/<b>')
+def add(a, b):
+    return str((float(a) / float(b)) - 1)    
+
 @app.route('/area')
 def myarea():
   altura = request.args.get('altura', default = 0, type = float)
